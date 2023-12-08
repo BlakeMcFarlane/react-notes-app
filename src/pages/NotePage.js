@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { ReactComponent as ArrowLeft } from '../assets/arrow-left.svg'
 
-const NotePage = () => {
+const NotePage = ({history}) => {
     const {id} = useParams();
     // const note = notes.find(note => note.id === Number(id))
     let [note, setNote] = useState(null)
@@ -33,9 +33,7 @@ const NotePage = () => {
         navigate('/')
     }
 
-    let navigate = useNavigate => {
-
-    }
+    let navigate = useNavigate()
 
     return (
         <div className='note'>
